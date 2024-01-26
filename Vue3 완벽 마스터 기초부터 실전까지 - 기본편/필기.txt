@@ -1,0 +1,7 @@
+npm init
+
+- 바벨 요소 설치
+npm install --save-dev @babel/core @babel/cli @babel/preset-env core-js
+
+- sr 디렉터리 전체의 소스코드를 트랜스파일한뒤 build 디렉터리에 동일한 파일명 저장
+npx babel src -d build 
