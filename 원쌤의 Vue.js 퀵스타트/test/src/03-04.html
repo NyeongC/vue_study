@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-04</title>
+</head>
+<body>
+    <div id ="app">
+        <input type="text" v-model="name">
+        <br>
+        <div>{{name}}</div>
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+        var model = {
+            name : "",
+        };
+        var vm = Vue.createApp({
+            name: "App",
+            data() {
+                return model;
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
