@@ -5,6 +5,7 @@ var p = new Promise((resolve,reject) => {
 
 p.then((msg)=>{
     console.log(msg);
+    throw new Error("## 에러!!")
     return "second";
 })
 .then((msg)=>{
@@ -13,4 +14,7 @@ p.then((msg)=>{
 })
 .then((msg)=>{
     console.log(msg);
+})
+.catch((error)=>{
+    console.log("오류 발생 ==> " + error)
 })
