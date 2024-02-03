@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>04-08</title>
+  </head>
+  <body>
+    <div id="app">
+      두 글자 이상 입력하세요 : <input type="text" v-model="name">
+      <br>
+      <ul>
+        <li v-for="c in contacts">{{c.name}}</li>
+      </ul>
+      <div v-show="isLoading">검색중</div>
+     
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript" src="https://unpkg.com/axios"></script>
+    <script type="text/javascript" src="https://unpkg.com/lodash"></script>
+    <script type="text/javascript">
+      /*
+      watch 속성의 비동기 처리 예제
+
+      unpkg CDN vue, axios, lodash 사용
+      
+      https://contactsvc.bmaster.kro.kr 에서 연락처 호출 후 응답받아 화면에 렌더링
+      
+      _.debounce() 함수를 이용해 300ms 동안 연속적인 호출이 일어나지않으면 api 요청
+      
+      axios 로 get api 호출
+      
+      
+      */
+      const BASEURL = "https://contactsvc.bmaster.kro.kr";
+      var vm = Vue.createApp({
+        data() {
+          return { 
+              name : "",
+              isLoading : false,
+              contacts : [],
+
+            }
+          },
+        watch : {
+          name(current) {
+            if(current.length >= 2){
+              this.fetchContacts();
+
+            }else  {
+              this.contacts = [];
+            }
+          }
+        },
+        methods : {
+          fetchContacts : _.debounce(function(){
+            this.isLoading = true;
+            axios.get(BASEURL +`/contacts_long/search/${this.name}`)
+            .then((response)=>{
+              this.isLoading = false;
+              this.contacts = response.data;
+            })
+
+          }, 300)
+
+        }
+        
+      }).mount("#app");
+    </script>
+  </body>
+</html>
