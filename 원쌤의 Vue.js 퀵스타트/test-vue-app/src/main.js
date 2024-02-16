@@ -1,4 +1,4 @@
-import "./assets/main.css"; // .css 파일을 모듈처럼 임포트함
+//import "./assets/main.css"; // .css 파일을 모듈처럼 임포트함
 
 import { createApp } from "vue"; // createApp 함수를 임포트
 import App from "./App.vue"; // App 컴포넌트를 임포트한 후 6행에서 App 컴포넌트를 import CheckboxItemVue from './components/CheckboxItem.vue'렌더링;
