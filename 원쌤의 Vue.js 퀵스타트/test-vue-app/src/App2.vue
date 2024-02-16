@@ -1,17 +1,17 @@
 <template>
   <div>
-    <h2> App 컴포넌트</h2>
+    <h2>관심있는 K-POP 가수?</h2>
     <hr>
     <ul>
       <!-- <CheckboxItem v-for="idol in idols" :key="idol.id" :name="idol.name" :checked="idol.checked" /> -->
-      <CheckboxItem v-for="idol in idols" v-bind="idol"></CheckboxItem>
+      <CheckboxItem v-for="idol in idols" :idol="idol"></CheckboxItem>
     </ul>
   </div>
   
 </template>
 
 <script>
-   import CheckboxItem from './components/CheckboxItem.vue';
+   import CheckboxItem from './components/CheckboxItem2.vue';
    export default {
      name: "App",
      components: { CheckboxItem },
