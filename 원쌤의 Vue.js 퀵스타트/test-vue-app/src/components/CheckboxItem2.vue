@@ -6,7 +6,7 @@
 </template>
 <script>
     export default{
-        name: "CheckboxItem2",
+        name: "CheckboxItem",
         props : ["idol"]
     }
 </script>

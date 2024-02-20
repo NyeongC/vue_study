@@ -3,7 +3,8 @@
 import { createApp } from "vue"; // createApp 함수를 임포트
 //import App from "./App.vue"; // App 컴포넌트를 임포트한 후 6행에서 App 컴포넌트를 import CheckboxItemVue from './components/CheckboxItem.vue'렌더링;
 
-import App from "./App2.vue";
+//import App from "./App2.vue";
+import App from "./App4.vue";
 
 //import CheckboxItem from "./components/CheckboxItem.vue"; // 전역 컴포넌트 등록시 루트 컴포넌트 하위의 모든 자식 컴포넌트에서 사용 가능
 
